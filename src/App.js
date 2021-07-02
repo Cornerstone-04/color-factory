@@ -1,20 +1,22 @@
-
 import React from 'react';
-import { Route, Switch } from 'react-router-dom'
-
+import './App.css';
 import Home from './Components/Home'
 import Form from './Components/Form'
-import DisplayColor from './Components/displayColor';
+import { Route, Switch } from 'react-router-dom'
+import red from './Components/red';
+import green from './Components/green';
+import blue from './Components/blue';
 
-import './App.css';
 
 function App() {
   return (
     <div className="App">
         <Switch>
-          <Route path="/:colorName/:colorCode" component={DisplayColor} />
-          <Route exact path="/Add" component={Form} />
           <Route exact path="/" component={Home} />
+          <Route exact path="/Add" component={Form} />
+          <Route exact path="/red" component={red} />
+          <Route exact path="/green" component={green} />
+          <Route exact path="/blue" component={blue} />
         </Switch>
     </div>
   );
