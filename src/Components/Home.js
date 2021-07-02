@@ -19,13 +19,13 @@ function Home() {
                     Please Select a Color
                 </h2>
                 <div>
-                    <p><Link to="/red">red</Link></p>
+                    <p><Link to="/red/ff0000">red</Link></p>
                 </div>
                 <div>
-                    <p><Link to="/green">green</Link></p>
+                    <p><Link to="/green/00ff00">green</Link></p>
                 </div>
                 <div>
-                    <p><Link to="/blue">blue</Link></p>
+                    <p><Link to="/blue/0000ff">blue</Link></p>
                 </div>
             </div>
         </div>
