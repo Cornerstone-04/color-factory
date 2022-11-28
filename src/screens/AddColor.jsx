@@ -3,6 +3,7 @@ import toast from "react-hot-toast";
 import { Link, useNavigate } from "react-router-dom";
 import { db } from "../data/db";
 
+// destructure database
 export const { newColors } = db;
 
 const AddColor = () => {
@@ -12,20 +13,27 @@ const AddColor = () => {
     colorCode: "",
   });
 
+  // add new color
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (user.colorCode && user.colorName) {
+      // if colorCode and colorName are present, add them to newColors database
       await newColors.add({
         colorName: user.colorName,
         colorCode: user.colorCode,
       });
+
+      // set color name and color code to empty values
       setUser({ ...user, colorName: "" });
       setUser({ ...user, colorCode: "" });
       toast.success("Color Added");
+
+      // return to homepage after 1 second
       setTimeout(() => {
         navigate("/");
       }, 1000);
     } else {
+      // if one or both inputs is empty, display error message
       toast.error("Please fill all input!");
     }
   };
@@ -40,6 +48,7 @@ const AddColor = () => {
           <span>Enter a Color</span>
           <input
             type="text"
+            // on input, set color name to input value
             onChange={(e) => setUser({ ...user, colorName: e.target.value })}
             value={user.colorName}
             className="w-full h-[50px] border border-slate-800 outline-none indent-2"
@@ -49,6 +58,7 @@ const AddColor = () => {
           <span>Select Color</span>
           <input
             type="color"
+            // on input, set color code to input value
             onChange={(e) => setUser({ ...user, colorCode: e.target.value })}
             className="w-full h-[50px] rounded-lg overflow-hidden"
             value={user.colorCode}

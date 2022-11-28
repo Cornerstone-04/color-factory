@@ -2,7 +2,9 @@ import React from "react";
 import { Link, useParams } from "react-router-dom";
 
 const DisplayColor = () => {
+  // decalre variables to match route parameters
   const { colorName, colorCode } = useParams();
+
   return (
     <div
       style={{ backgroundColor: "#" + colorCode }}

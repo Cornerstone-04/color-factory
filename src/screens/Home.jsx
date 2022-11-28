@@ -9,6 +9,7 @@ import { newColors } from "./AddColor";
 const Home = () => {
   const [displayArrow, setDisplayArrow] = useState(false);
 
+  //display arrow on page scroll
   const listenToScroll = () => {
     if (
       document.body.scrollTop > 50 ||
@@ -20,14 +21,17 @@ const Home = () => {
     }
   };
 
+  // listen for page scroll
   useEffect(() => {
     window.addEventListener("scroll", listenToScroll);
     return () => window.removeEventListener("scroll", listenToScroll);
   }, []);
 
+  //scroll up function
   const scrollUp = () => {
     window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
   };
+
   return (
     <div className="min-h-screen flex flex-col items-center pb-[40px] bg-gray-200 gap-[50px]">
       <div className="w-full flex flex-col items-center gap-[40px]">
@@ -72,9 +76,13 @@ const Home = () => {
               </div>
             </div>
           ))}
+
+          {/* if newColors database exists, display new color cards */}
           {newColors && <ColorCard />}
         </div>
       </div>
+
+      {/* if true, display arrow */}
       {displayArrow && (
         <button
           className="flex justify-center items-center w-10 h-10 fixed bottom-[20px] right-[10px] cursor-pointer"
