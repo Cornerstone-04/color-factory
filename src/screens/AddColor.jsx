@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import toast from "react-hot-toast";
 import { Link } from "react-router-dom";
+import { db } from "../data/db";
+
+export const { newColors } = db;
 
 const AddColor = () => {
   const [user, setUser] = useState({
@@ -8,10 +11,17 @@ const AddColor = () => {
     colorCode: "",
   });
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (user.colorCode && user.colorName) {
-      toast.success(`This is ${user.colorName} with ${user.colorCode}`);
+      await newColors.add({
+        colorName: user.colorName,
+        colorCode: user.colorCode,
+      });
+      setUser({ ...user, colorName: "" });
+      setUser({ ...user, colorCode: "" });
+      
+      toast.success("Color Added");
     } else {
       toast.error("Please fill all input!");
     }
@@ -46,7 +56,12 @@ const AddColor = () => {
         </button>
       </form>
 
-      <Link to="/" className="text-cyan-500 hover:text-cyan-300 bg-slate-800 p-[10px] ">Return home</Link>
+      <Link
+        to="/"
+        className="text-cyan-500 hover:text-cyan-300 bg-slate-800 p-[10px] "
+      >
+        Return home
+      </Link>
     </div>
   );
 };
