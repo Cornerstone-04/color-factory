@@ -35,7 +35,7 @@ const Home = () => {
           Color Factory
         </h2>
         <Link
-          to="/add-color"
+          to="/add-a-color"
           className="py-[10px] px-[15px] bg-slate-800 text-white font-bold text-lg"
         >
           Add a color

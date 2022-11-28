@@ -7,7 +7,7 @@ const AppRoutes = () => {
     <Router>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="add-color" element={<AddColor />} />
+        <Route path="add-a-color" element={<AddColor />} />
         <Route path=":colorName/:colorCode" element={<DisplayColor />} />
       </Routes>
     </Router>
