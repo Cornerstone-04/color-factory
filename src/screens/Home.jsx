@@ -31,7 +31,7 @@ const Home = () => {
   return (
     <div className="min-h-screen flex flex-col items-center pb-[40px] bg-gray-200 gap-[50px]">
       <div className="w-full flex flex-col items-center gap-[40px]">
-        <h2 className="h-[80px] flex justify-center items-center w-full bg-[#16161d] text-white font-bold text-2xl md:text-3xl uppercase">
+        <h2 className="h-[80px] flex justify-center items-center w-full bg-slate-800 text-white font-bold text-2xl md:text-3xl uppercase">
           Color Factory
         </h2>
         <Link
