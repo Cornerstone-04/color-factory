@@ -3,7 +3,7 @@ import AppRoutes from "./Routes";
 
 const App = () => {
   return (
-    <div>
+    <div className="w-full max-h-screen">
       <AppRoutes />
     </div>
   );

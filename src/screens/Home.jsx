@@ -4,12 +4,10 @@ import homeData from "../data/home";
 
 const Home = () => {
   return (
-    <div>
+    <div className="min-h-screen p-[20px] flex flex-col items-center ">
       <div>
         <h2>Welcome to the Color Factory</h2>
-        <h1>
-          <Link to="/add-color">Add a color</Link>
-        </h1>
+        <Link to="/add-color">Add a color</Link>
       </div>
 
       <div>
