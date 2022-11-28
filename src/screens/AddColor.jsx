@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import toast from "react-hot-toast";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { db } from "../data/db";
 
 export const { newColors } = db;
 
 const AddColor = () => {
+  const navigate = useNavigate();
   const [user, setUser] = useState({
     colorName: "",
     colorCode: "",
@@ -20,8 +21,10 @@ const AddColor = () => {
       });
       setUser({ ...user, colorName: "" });
       setUser({ ...user, colorCode: "" });
-      
       toast.success("Color Added");
+      setTimeout(() => {
+        navigate("/");
+      }, 1000);
     } else {
       toast.error("Please fill all input!");
     }

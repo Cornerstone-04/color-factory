@@ -10,7 +10,7 @@ root.render(
     <Toaster
       position="top-center"
       toastOptions={{
-        duration: 2500,
+        duration: 2000,
         style: {
           display: "block",
           textAlign: "center",
