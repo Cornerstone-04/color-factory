@@ -2,7 +2,8 @@ import { useLiveQuery } from "dexie-react-hooks";
 import React from "react";
 import { Link } from "react-router-dom";
 import { newColors } from "../screens/AddColor";
-import Trash from "./Trash";
+import { Trash } from "./Icons";
+
 
 const ColorCard = () => {
   const color = useLiveQuery(() => newColors.toArray(), []);

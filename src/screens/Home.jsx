@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import toast from "react-hot-toast";
 import { Link } from "react-router-dom";
-import { ColorCard, Trash } from "../components";
+import { ColorCard } from "../components";
+import { Arrow, Trash } from "../components/Icons";
 import homeData from "../data/home";
 import { newColors } from "./AddColor";
 
@@ -79,18 +80,7 @@ const Home = () => {
           className="flex justify-center items-center w-10 h-10 fixed bottom-[20px] right-[10px] cursor-pointer"
           onClick={scrollUp}
         >
-          <svg
-            className="w-6 h-6"
-            fill="currentColor"
-            viewBox="0 0 20 20"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              fill-rule="evenodd"
-              d="M5.293 7.707a1 1 0 010-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 01-1.414 1.414L11 5.414V17a1 1 0 11-2 0V5.414L6.707 7.707a1 1 0 01-1.414 0z"
-              clip-rule="evenodd"
-            ></path>
-          </svg>
+          <Arrow />
         </button>
       )}
     </div>
