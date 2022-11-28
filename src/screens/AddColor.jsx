@@ -10,30 +10,43 @@ const AddColor = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    toast.success("clicked");
+    if (user.colorCode && user.colorName) {
+      toast.success(`This is ${user.colorName} with ${user.colorCode}`);
+    } else {
+      toast.error("Please fill all input!");
+    }
   };
 
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
-        <label>
+    <div className="w-full h-screen flex flex-col justify-center items-center gap-[40px] bg-gray-200">
+      <form
+        onSubmit={handleSubmit}
+        className="flex flex-col gap-[20px] w-full max-w-[500px] px-[50px]"
+      >
+        <label className="flex flex-col font-semibold text-lg gap-[6px] w-full">
           <span>Enter a Color</span>
           <input
-            type="color"
-            onChange={(e) => setUser(user, ...e.target.value)}
+            type="text"
+            onChange={(e) => setUser({ ...user, colorName: e.target.value })}
+            value={user.colorName}
+            className="w-full h-[50px] border border-slate-800 outline-none indent-2"
           />
         </label>
-        <label>
+        <label className="flex flex-col font-semibold text-lg gap-[6px]">
           <span>Select Color</span>
           <input
             type="color"
-            onChange={(e) => setUser(user, ...e.target.value)}
+            onChange={(e) => setUser({ ...user, colorCode: e.target.value })}
+            className="w-full h-[50px] rounded-lg overflow-hidden"
+            value={user.colorCode}
           />
         </label>
-        <button>Add Color</button>
+        <button className="h-[50px] w-[150px] flex justify-center items-center bg-slate-800 font-bold text-white text-lg">
+          Add Color
+        </button>
       </form>
 
-      <Link to="/">Return home</Link>
+      <Link to="/" className="text-cyan-500 hover:text-cyan-300 bg-slate-800 p-[10px] ">Return home</Link>
     </div>
   );
 };
