@@ -12,8 +12,8 @@ const DisplayColor = () => {
     >
       <div className="flex flex-col gap-[10px] justify-center items-center p-[20px] bg-[#16161d] text-white">
         <h1 className="text-xl ">
-          This is <span className="font-bold capitalize"> {colorName}</span>{" "}
-          with hex <span className="font-bold"> #{colorCode}</span>
+          This is <span className="font-bold uppercase"> {colorName}</span>{" "}
+          with hex <span className="font-bold uppercase"> #{colorCode}</span>
         </h1>
         <Link to="/" className="text-cyan-500 hover:text-cyan-300">
           Home

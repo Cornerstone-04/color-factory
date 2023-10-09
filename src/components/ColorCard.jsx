@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 import { newColors } from "../screens/AddColor";
 import { Trash } from "./Icons";
 
-
 const ColorCard = () => {
   const color = useLiveQuery(() => newColors.toArray(), []);
   const deleteTask = async (id) => await newColors.delete(id);

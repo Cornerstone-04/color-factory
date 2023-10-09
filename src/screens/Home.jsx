@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
-import toast from "react-hot-toast";
 import { Link } from "react-router-dom";
-import { ColorCard } from "../components";
-import { Arrow, Trash } from "../components/Icons";
+import ColorCard from "../components/ColorCard";
+import { Arrow } from "../components/Icons";
 import homeData from "../data/home";
 import { newColors } from "./AddColor";
 
@@ -68,11 +67,6 @@ const Home = () => {
                 >
                   {name}
                 </Link>
-                <Trash
-                  onClick={() => {
-                    toast.error("Default colors cannot be deleted");
-                  }}
-                />
               </div>
             </div>
           ))}
